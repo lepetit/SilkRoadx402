@@ -247,7 +247,7 @@ export default function Home() {
               { icon: "🔐", title: "Security Tools", desc: "Auditors, scanners, monitors" },
               { icon: "💻", title: "Scripts", desc: "Automation, deployment, testing" },
               { icon: "📱", title: "APIs", desc: "Custom endpoints, wrappers" },
-              { icon: "🎮", title: "Game Mods", desc: "Plugins, cheats, enhancements" },
+              { icon: "🎮", title: "Game Mods", desc: "Plugins, enhancements, utilities" },
             ].map((item, i) => (
               <div key={i} className="bg-black/50 border border-gray-800 p-4 rounded text-center hover:border-green-500/30 transition-all">
                 <div className="text-3xl mb-2">{item.icon}</div>
