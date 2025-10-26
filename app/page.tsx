@@ -38,7 +38,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            $0.01 TX Fees
+            Near-Zero TX Fees
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -52,7 +52,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold mb-4">What is <span className="text-cyan-400">x402</span>?</h2>
           <p className="text-gray-400 mb-8 max-w-3xl">
-            x402 is an open protocol that makes the internet payable. Built on the HTTP 402 "Payment Required" status code, 
+            x402 is an open protocol that makes the internet payable. Built on the HTTP 402 &quot;Payment Required&quot; status code, 
             it enables instant, wallet-based micropayments without accounts, subscriptions, or middlemen.
           </p>
           
@@ -69,7 +69,7 @@ export default function Home() {
             </div>
             
             <div className="border-glow bg-black/50 p-6 rounded">
-              <h3 className="text-xl font-bold mb-3 text-cyan-400">Why It's Powerful</h3>
+              <h3 className="text-xl font-bold mb-3 text-cyan-400">Why It&apos;s Powerful</h3>
               <ul className="space-y-3 text-gray-400">
                 <li className="flex gap-2">
                   <span className="text-green-500">✓</span>
@@ -95,7 +95,7 @@ export default function Home() {
             <p className="text-sm text-gray-500 leading-relaxed">
               <strong className="text-gray-300">Technical Deep Dive:</strong> When your software is requested, 
               the server responds with a 402 status containing payment parameters (amount, recipient address, USDC mint, network). 
-              The buyer's wallet (e.g., Phantom) signs a structured message following EIP-712/ed25519 standards with a nonce, 
+              The buyer&apos;s wallet (e.g., Phantom) signs a structured message following EIP-712/ed25519 standards with a nonce, 
               timestamp, and paymentId to prevent replay attacks. The signed payload is attached as an HTTP header on retry. 
               The server verifies the signature, broadcasts the SPL token transfer to Solana mainnet, and serves the download 
               link upon confirmation. No chargebacks, no accounts, no friction—just pure peer-to-peer commerce.
@@ -110,7 +110,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold mb-4">Why <span className="gradient-text">SilkRoadx402</span>?</h2>
           <p className="text-gray-400 mb-12 max-w-3xl">
             Most marketplaces force you to reveal your identity, wait days for payments, and lose 15-30% to fees. 
-            We're building the first truly anonymous, instant-settlement marketplace for developers.
+            We&apos;re building the first truly anonymous, instant-settlement marketplace for developers.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -127,8 +127,8 @@ export default function Home() {
               <div className="text-3xl mb-3">⚡</div>
               <h3 className="text-lg font-bold mb-2 text-cyan-400">Instant Settlement</h3>
               <p className="text-gray-400 text-sm">
-                Get paid the moment someone downloads your software. No escrow delays, no payment holds, no waiting for 
-                "processing periods." Money hits your wallet in under 1 second.
+                Payments settle on Solana in under 1 second. Smart contract escrow auto-releases funds upon delivery—no 
+                manual holds, no waiting periods. Money flows instantly.
               </p>
             </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
               <div className="text-3xl mb-3">🔒</div>
               <h3 className="text-lg font-bold mb-2 text-red-400">Encrypted Storage</h3>
               <p className="text-gray-400 text-sm">
-                Files stored on IPFS with client-side encryption. Only paying customers get the decryption keys. 
+                Files stored with client-side encryption. Only paying customers get the decryption keys. 
                 Your intellectual property stays protected.
               </p>
             </div>
@@ -176,15 +176,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold mb-4">How to Make <span className="text-green-400">Money</span></h2>
           <p className="text-gray-400 mb-12 max-w-3xl">
-            Turn your private tools into passive income. Whether it's a Solana trading bot, MEV script, 
-            data scraper, or custom API—if it's valuable, people will pay for it.
+            Turn your private tools into passive income. Whether it&apos;s a Solana trading bot, MEV script, 
+            data scraper, or custom API—if it&apos;s valuable, people will pay for it.
           </p>
 
           <div className="space-y-6">
             <div className="bg-black/50 border-l-4 border-green-500 p-6 rounded">
               <h3 className="text-xl font-bold mb-2">1. List Your Software</h3>
               <p className="text-gray-400">
-                Connect your wallet, upload your software to IPFS (encrypted), and sign the listing metadata with your private key. 
+                Connect your wallet, upload your encrypted software, and sign the listing metadata with your private key. 
                 Set your price in USDC—could be $0.10 or $10,000, your call. No approval process, no waiting.
               </p>
             </div>
@@ -192,7 +192,7 @@ export default function Home() {
             <div className="bg-black/50 border-l-4 border-cyan-500 p-6 rounded">
               <h3 className="text-xl font-bold mb-2">2. Buyers Pay via x402</h3>
               <p className="text-gray-400">
-                When someone wants your software, they click "Buy." x402 triggers their wallet to authorize payment. 
+                When someone wants your software, they click &quot;Buy.&quot; x402 triggers their wallet to authorize payment. 
                 Transaction settles on Solana in 400ms. They get the download link, you get paid instantly.
               </p>
             </div>
@@ -200,8 +200,8 @@ export default function Home() {
             <div className="bg-black/50 border-l-4 border-purple-500 p-6 rounded">
               <h3 className="text-xl font-bold mb-2">3. Collect Revenue 24/7</h3>
               <p className="text-gray-400">
-                Your listing stays live forever. Every purchase sends USDC directly to your wallet—no withdrawals, no minimums. 
-                Build it once, earn forever. One popular bot can generate $10k+/month on autopilot.
+                Your listing stays live. Every purchase sends USDC directly to your wallet—no withdrawals, no minimums. 
+                Build it once, sell it repeatedly to buyers worldwide.
               </p>
             </div>
           </div>
@@ -279,7 +279,7 @@ export default function Home() {
             Join X Community →
           </button>
           <p className="text-sm text-gray-600 mt-6">
-            Platform launching Q1 2026 • Early access for X community members
+            Platform launching Q4 2025
           </p>
         </div>
       </section>
@@ -299,7 +299,7 @@ export default function Home() {
               <ul className="text-sm text-gray-500 space-y-2">
                 <li>• x402 Payment Protocol</li>
                 <li>• Solana Blockchain</li>
-                <li>• IPFS Storage</li>
+                <li>• Encrypted Cloud Storage</li>
                 <li>• Client-Side Encryption</li>
               </ul>
             </div>
