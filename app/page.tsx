@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
@@ -16,6 +17,14 @@ export default function Home() {
       <header className="border-b border-gray-800 sticky top-0 bg-black/95 backdrop-blur z-50">
         <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            <Image 
+              src="/correcto.png" 
+              alt="SilkRoadx402 Logo" 
+              width={40} 
+              height={40}
+              className="rounded"
+              style={{ maxWidth: '40px', maxHeight: '40px' }}
+            />
             <div className="text-2xl font-bold">
               <span className="text-green-400">Silk</span>
               <span className="text-cyan-400">Road</span>
@@ -411,7 +420,17 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-12">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="font-bold mb-3 text-green-400">SilkRoadx402</h3>
+              <div className="flex items-center gap-2 mb-3">
+                <Image 
+                  src="/correcto.png" 
+                  alt="SilkRoadx402 Logo" 
+                  width={24} 
+                  height={24}
+                  className="rounded"
+                  style={{ maxWidth: '24px', maxHeight: '24px' }}
+                />
+                <h3 className="font-bold text-green-400">SilkRoadx402</h3>
+              </div>
               <p className="text-sm text-gray-500">
                 The first decentralized marketplace for private software sales using x402 payments on Solana.
               </p>
