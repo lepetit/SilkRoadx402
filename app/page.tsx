@@ -30,15 +30,19 @@ export default function Home() {
         <div className="flex flex-wrap gap-4 justify-center text-sm text-gray-500">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-            Anonymous Listings
+            Zero KYC
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
-            Instant Payments
+            Anonymous Listings
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-            Near-Zero TX Fees
+            Instant Payments
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+            Near-Zero Fees
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
@@ -116,10 +120,11 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-black/50 border border-gray-800 p-6 rounded">
               <div className="text-3xl mb-3">🎭</div>
-              <h3 className="text-lg font-bold mb-2 text-green-400">Anonymous by Default</h3>
+              <h3 className="text-lg font-bold mb-2 text-green-400">Zero KYC Required</h3>
               <p className="text-gray-400 text-sm">
-                List and sell without revealing your identity. Your Solana wallet address is your only fingerprint—no KYC, 
-                no personal info, no trace.
+                No identity verification, no bank accounts, no tax forms. Just connect your Solana wallet and start selling. 
+                Unlike traditional platforms (Gumroad, Stripe, PayPal) that require full KYC for sellers, SilkRoadx402 
+                keeps you completely anonymous. Your wallet address is your only fingerprint.
               </p>
             </div>
 
@@ -136,7 +141,7 @@ export default function Home() {
               <div className="text-3xl mb-3">💸</div>
               <h3 className="text-lg font-bold mb-2 text-purple-400">0.5% Fees</h3>
               <p className="text-gray-400 text-sm">
-                Keep 99.5% of your revenue on compliant software. No payment processor fees, no platform cut, no hidden charges. 
+                Keep 99.5% of your revenue on standard listings. No payment processor fees, no platform cut, no hidden charges. 
                 Just 0.5% to keep the marketplace running.
               </p>
             </div>
@@ -185,7 +190,8 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-2">1. List Your Software</h3>
               <p className="text-gray-400">
                 Connect your wallet, upload your encrypted software, and sign the listing metadata with your private key. 
-                Set your price in USDC—could be $0.10 or $10,000, your call. No approval process, no waiting.
+                Set your price in USDC—could be $0.10 or $10,000, your call. No KYC, no approval process, no waiting. 
+                Start selling in 60 seconds.
               </p>
             </div>
 
@@ -265,8 +271,8 @@ export default function Home() {
               applicable laws. Violators will be permanently banned and reported to authorities.
             </p>
             <p className="text-gray-400 text-sm">
-              <strong className="text-red-300">Fee Structure:</strong> Compliant software pays 0.5% fees. High-risk or 
-              non-compliant listings incur a 35% fee, used exclusively for SRx420 token buyback/burn—not as platform profit. 
+              <strong className="text-red-300">Fee Structure:</strong> Standard software pays 0.5% fees. High-risk listings 
+              (at platform discretion) incur a 35% fee, used exclusively for SRx420 token buyback/burn—not as platform profit. 
               We do not profit from any questionable software.
             </p>
           </div>
@@ -325,9 +331,9 @@ export default function Home() {
               Buyers and sellers interact directly via smart contracts. All transactions are final and non-refundable due to blockchain immutability.
             </p>
             <p className="text-xs text-gray-600 text-center mt-4">
-              <strong>Platform Fees:</strong> 0.5% on compliant software transactions. High-risk or non-compliant listings are subject to a 35% fee, 
-              which is used exclusively for SRx420 token buyback and burn—not as profit. This protects the platform from liability associated with 
-              potentially problematic software. SilkRoadx402 does not profit from any non-compliant software sales.
+              <strong>Platform Fees:</strong> 0.5% on standard software transactions. High-risk listings (determined at platform discretion) are subject to a 35% fee, 
+              which is used exclusively for SRx420 token buyback and burn—not as platform profit. This protects the platform from liability associated with 
+              potentially problematic software. Non-compliant or illegal software is strictly prohibited and will not be listed.
             </p>
             <p className="text-xs text-gray-700 text-center mt-6">
               © 2025 SilkRoadx402. All rights reserved. Not affiliated with the original Silk Road.

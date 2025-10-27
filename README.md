@@ -8,10 +8,11 @@ SilkRoadx402 is an anonymous marketplace where developers can list and sell thei
 
 ## Key Features
 
+- **Zero KYC**: No identity verification, no bank accounts, no tax forms required
 - **Anonymous Listings**: Sell without revealing your identity
 - **Instant Payments**: Get paid in USDC on Solana in under 1 second
 - **x402 Protocol**: HTTP-based micropayments with zero friction
-- **0.5% Fees**: Keep 99.5% of your revenue
+- **0.5% Fees**: Keep 99.5% of your revenue on standard listings
 - **Encrypted Storage**: Secure, encrypted file storage
 - **Legal Only**: Strict compliance with US regulations
 
@@ -48,10 +49,10 @@ This site is designed to be deployed on Vercel via GitHub integration:
 SilkRoadx402 prohibits the sale of illegal software, malware, or tools that violate US regulations. The platform operates as a peer-to-peer marketplace with no liability for user-generated listings.
 
 **Platform Fees:**
-- 0.5% on compliant software transactions
-- 35% on high-risk or non-compliant listings (used exclusively for SRx420 token buyback/burn, not profit)
+- 0.5% on standard software transactions
+- 35% on high-risk listings (at platform discretion, used exclusively for SRx420 token buyback/burn, not profit)
 
-This dual-fee structure protects the platform from profiting off potentially problematic software.
+This dual-fee structure protects the platform from profiting off potentially problematic software. Non-compliant or illegal software will not be listed.
 
 ---
 
