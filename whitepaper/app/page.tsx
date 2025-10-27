@@ -328,15 +328,11 @@ export default function Home() {
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8">
-            {/* Chart Placeholder */}
+            {/* Chart */}
             <div className="bg-black/50 border border-gray-800 rounded-lg p-6 flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-green-400">Live Chart</h3>
-              <div className="flex-1 bg-gray-900/50 border border-gray-800 rounded flex items-center justify-center min-h-[300px] lg:min-h-[400px]">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">📈</div>
-                  <p className="text-gray-500">Live chart will appear when token is bonded</p>
-                  <p className="text-xs text-gray-600 mt-2">Currently on pump.fun bonding curve</p>
-                </div>
+              <div id="dexscreener-embed">
+                <iframe src="https://dexscreener.com/solana/4dquGRPzcjskMsHtiFagPuguMfY37ywkNMNBg4F54fNW?embed=1&loadChartSettings=0&trades=0&tabs=0&info=0&chartLeftToolbar=0&chartTheme=dark&theme=dark&chartStyle=1&chartType=marketCap&interval=1"></iframe>
               </div>
             </div>
 
