@@ -47,7 +47,11 @@ This site is designed to be deployed on Vercel via GitHub integration:
 
 SilkRoadx402 prohibits the sale of illegal software, malware, or tools that violate US regulations. The platform operates as a peer-to-peer marketplace with no liability for user-generated listings.
 
-Platform fee: 0.5% on all transactions.
+**Platform Fees:**
+- 0.5% on compliant software transactions
+- 35% on high-risk or non-compliant listings (used exclusively for SRx420 token buyback/burn, not profit)
+
+This dual-fee structure protects the platform from profiting off potentially problematic software.
 
 ---
 

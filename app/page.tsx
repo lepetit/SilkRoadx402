@@ -136,7 +136,7 @@ export default function Home() {
               <div className="text-3xl mb-3">💸</div>
               <h3 className="text-lg font-bold mb-2 text-purple-400">0.5% Fees</h3>
               <p className="text-gray-400 text-sm">
-                Keep 99.5% of your revenue. No payment processor fees, no platform cut, no hidden charges. 
+                Keep 99.5% of your revenue on compliant software. No payment processor fees, no platform cut, no hidden charges. 
                 Just 0.5% to keep the marketplace running.
               </p>
             </div>
@@ -259,10 +259,15 @@ export default function Home() {
 
           <div className="mt-8 p-6 bg-red-900/10 border border-red-500/30 rounded-lg">
             <h3 className="text-lg font-bold mb-2 text-red-400">⚠️ Legal Software Only</h3>
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm mb-3">
               SilkRoadx402 strictly prohibits the sale of any illegal software, malware, hacking tools intended for 
               unauthorized access, or software that violates United States regulations. All listings must comply with 
               applicable laws. Violators will be permanently banned and reported to authorities.
+            </p>
+            <p className="text-gray-400 text-sm">
+              <strong className="text-red-300">Fee Structure:</strong> Compliant software pays 0.5% fees. High-risk or 
+              non-compliant listings incur a 35% fee, used exclusively for SRx420 token buyback/burn—not as platform profit. 
+              We do not profit from any questionable software.
             </p>
           </div>
         </div>
@@ -320,7 +325,9 @@ export default function Home() {
               Buyers and sellers interact directly via smart contracts. All transactions are final and non-refundable due to blockchain immutability.
             </p>
             <p className="text-xs text-gray-600 text-center mt-4">
-              <strong>Platform Fee:</strong> 0.5% collected on all transactions to maintain marketplace infrastructure and operations.
+              <strong>Platform Fees:</strong> 0.5% on compliant software transactions. High-risk or non-compliant listings are subject to a 35% fee, 
+              which is used exclusively for SRx420 token buyback and burn—not as profit. This protects the platform from liability associated with 
+              potentially problematic software. SilkRoadx402 does not profit from any non-compliant software sales.
             </p>
             <p className="text-xs text-gray-700 text-center mt-6">
               © 2025 SilkRoadx402. All rights reserved. Not affiliated with the original Silk Road.
