@@ -210,8 +210,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold mb-4">Why <span className="gradient-text">SilkRoadx402</span>?</h2>
           <p className="text-gray-400 mb-12 max-w-3xl">
-            Most marketplaces force you to reveal your identity, wait days for payments, and lose 15-30% to fees. 
-            We&apos;re building the first truly anonymous, instant-settlement marketplace for developers.
+            Most marketplaces force you to reveal your identity and wait days for payments. 
+            We&apos;re building the first truly anonymous, instant-settlement, zero-fee marketplace for developers.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -236,10 +236,10 @@ export default function Home() {
 
             <div className="bg-black/50 border border-gray-800 p-6 rounded">
               <div className="text-3xl mb-3">💸</div>
-              <h3 className="text-lg font-bold mb-2 text-purple-400">0.5% Fees</h3>
+              <h3 className="text-lg font-bold mb-2 text-purple-400">Zero Platform Fees</h3>
               <p className="text-gray-400 text-sm">
-                Keep 99.5% of your revenue on standard listings. No payment processor fees, no platform cut, no hidden charges. 
-                Just 0.5% to keep the marketplace running.
+                Keep 100% of your revenue. No payment processor fees, no platform cut, no hidden charges. 
+                Only pay blockchain transaction costs (fractions of a cent).
               </p>
             </div>
 
@@ -317,16 +317,16 @@ export default function Home() {
                 <div className="text-3xl font-bold text-green-400">$49.99</div>
               </div>
               <div>
-                <div className="text-sm text-gray-500 mb-1">Your Cut (99.5%)</div>
-                <div className="text-3xl font-bold text-cyan-400">$49.74</div>
+                <div className="text-sm text-gray-500 mb-1">Your Cut (100%)</div>
+                <div className="text-3xl font-bold text-cyan-400">$49.99</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 mb-1">100 Sales/Month</div>
-                <div className="text-3xl font-bold text-purple-400">$4,974</div>
+                <div className="text-3xl font-bold text-purple-400">$4,999</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 mb-1">Annual Revenue</div>
-                <div className="text-3xl font-bold text-yellow-400">$59,688</div>
+                <div className="text-3xl font-bold text-yellow-400">$59,988</div>
               </div>
             </div>
             <p className="text-sm text-gray-500 mt-4">
@@ -362,15 +362,10 @@ export default function Home() {
 
           <div className="mt-8 p-6 bg-red-900/10 border border-red-500/30 rounded-lg">
             <h3 className="text-lg font-bold mb-2 text-red-400">⚠️ Legal Software Only</h3>
-            <p className="text-gray-400 text-sm mb-3">
+            <p className="text-gray-400 text-sm">
               SilkRoadx402 strictly prohibits the sale of any illegal software, malware, hacking tools intended for 
               unauthorized access, or software that violates United States regulations. All listings must comply with 
               applicable laws. Violators will be permanently banned and reported to authorities.
-            </p>
-            <p className="text-gray-400 text-sm">
-              <strong className="text-red-300">Fee Structure:</strong> Standard software pays 0.5% fees. High-risk listings 
-              (at platform discretion) incur a 35% fee, used exclusively for SRx402 token buyback/burn—not as platform profit. 
-              We do not profit from any questionable software.
             </p>
           </div>
         </div>
@@ -423,7 +418,7 @@ export default function Home() {
                   <div className="text-3xl">💼</div>
                   <h3 className="text-xl font-bold text-cyan-400">For Sellers</h3>
                 </div>
-                <p className="text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm">
                   Hold 50,000+ $SRx402 to list your software on the marketplace. 
                   This requirement filters out low-effort listings and ensures sellers have skin in the game, 
                   protecting the platform&apos;s reputation.
@@ -459,7 +454,7 @@ export default function Home() {
 
             <div className="mt-8 text-center">
               <a 
-                href="https://pump.fun" 
+                href="https://dexscreener.com/solana/4dqugrpzcjskmshtifagpugumfy37ywknmnbg4f54fnw" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-green-500 to-cyan-500 text-black font-bold text-lg rounded hover:from-green-400 hover:to-cyan-400 transition-all"
@@ -481,7 +476,7 @@ export default function Home() {
             <span className="gradient-text">$SRx402</span> Token
           </h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Platform governance token. 35% fees from high-risk listings are used exclusively for buyback & burn.
+            Platform governance and access token. Hold 50,000+ tokens to access the marketplace.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-8">
@@ -556,21 +551,21 @@ export default function Home() {
               </div>
 
               <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 rounded-lg p-6">
-                <h3 className="text-lg font-bold mb-2 text-purple-400">🔥 Burn Mechanism</h3>
+                <h3 className="text-lg font-bold mb-2 text-purple-400">🔐 Access Token</h3>
                 <p className="text-sm text-gray-400">
-                  35% fees from high-risk listings are used to buyback $SRx402 and burn it forever. 
-                  This deflationary mechanism protects the platform from profiting off questionable software while 
-                  increasing token scarcity over time.
+                  $SRx402 serves as the exclusive access key to the marketplace. 
+                  Hold 50,000+ tokens to browse, buy, and list software. This creates sustainable demand 
+                  and ensures only serious participants access the platform.
                 </p>
               </div>
 
               <a 
-                href="https://pump.fun" 
+                href="https://dexscreener.com/solana/4dqugrpzcjskmshtifagpugumfy37ywknmnbg4f54fnw" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-full px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold rounded hover:from-purple-600 hover:to-pink-600 transition-all text-center"
               >
-                Trade on pump.fun →
+                Trade on DexScreener →
               </a>
             </div>
           </div>
@@ -593,7 +588,7 @@ export default function Home() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="https://pump.fun" 
+              href="https://dexscreener.com/solana/4dqugrpzcjskmshtifagpugumfy37ywknmnbg4f54fnw" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-block px-12 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-lg rounded hover:from-purple-600 hover:to-pink-600 transition-all"
@@ -662,9 +657,9 @@ export default function Home() {
               Buyers and sellers interact directly via smart contracts. All transactions are final and non-refundable due to blockchain immutability.
             </p>
             <p className="text-xs text-gray-600 text-center mt-4">
-              <strong>Platform Fees:</strong> 0.5% on standard software transactions. High-risk listings (determined at platform discretion) are subject to a 35% fee, 
-              which is used exclusively for SRx402 token buyback and burn—not as platform profit. This protects the platform from liability associated with 
-              potentially problematic software. Non-compliant or illegal software is strictly prohibited and will not be listed.
+              <strong>Zero Platform Fees:</strong> SilkRoadx402 charges no platform fees. Sellers keep 100% of revenue. 
+              Only blockchain transaction costs apply (typically less than $0.01 per transaction). 
+              Non-compliant or illegal software is strictly prohibited and will not be listed.
             </p>
             <div className="flex flex-col items-center gap-3 mt-6">
               <p className="text-xs text-gray-700 text-center">
