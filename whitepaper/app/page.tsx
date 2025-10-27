@@ -219,7 +219,7 @@ export default function Home() {
               <div className="text-3xl mb-3">🎭</div>
               <h3 className="text-lg font-bold mb-2 text-green-400">Zero KYC Required</h3>
               <p className="text-gray-400 text-sm">
-                No identity verification, no bank accounts, no tax forms. Just connect your Solana wallet with 50,000+ $SRx402 tokens and start selling. 
+                No identity verification, no bank accounts, no tax forms. Just connect your Solana wallet and start selling. 
                 Unlike traditional platforms (Gumroad, Stripe, PayPal) that require full KYC for sellers, SilkRoadx402 
                 keeps you completely anonymous. Your wallet address is your only fingerprint.
               </p>
@@ -376,35 +376,113 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Marketplace Access Section */}
+      <section className="border-t border-gray-800 bg-gradient-to-b from-black via-gray-950 to-black">
+        <div className="max-w-6xl mx-auto px-4 py-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4">
+                <span className="gradient-text">Exclusive</span> Marketplace Access
+              </h2>
+              <p className="text-gray-400 text-lg">
+                SilkRoadx402 is a premium marketplace. Token holdings required to enter.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-900/20 via-cyan-900/20 to-purple-900/20 border-2 border-cyan-500/50 rounded-lg p-8 mb-8">
+              <div className="flex items-start gap-6">
+                <div className="text-6xl">🔐</div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold mb-3 text-cyan-400">50,000 $SRx402 Required</h3>
+                  <p className="text-gray-300 text-lg mb-4">
+                    To access the SilkRoadx402 marketplace—whether to browse, purchase, or list software—you must hold a minimum of{' '}
+                    <span className="text-green-400 font-bold text-xl">50,000 $SRx402</span> tokens in your connected wallet.
+                  </p>
+                  <p className="text-gray-400 mb-4">
+                    This paywall ensures only serious buyers and quality sellers participate on the platform. 
+                    No token holdings = no marketplace access. It&apos;s that simple.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-black/50 border border-gray-800 rounded-lg p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-3xl">👥</div>
+                  <h3 className="text-xl font-bold text-green-400">For Buyers</h3>
+                </div>
+                <p className="text-gray-400 text-sm">
+                  Hold 50,000+ $SRx402 to browse the marketplace, view listings, and purchase software. 
+                  No holdings = no access to any products. This creates a premium buyer pool and reduces platform spam.
+                </p>
+              </div>
+
+              <div className="bg-black/50 border border-gray-800 rounded-lg p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-3xl">💼</div>
+                  <h3 className="text-xl font-bold text-cyan-400">For Sellers</h3>
+                </div>
+                <p className="text-gray-400 text-sm">
+                  Hold 50,000+ $SRx402 to list your software on the marketplace. 
+                  This requirement filters out low-effort listings and ensures sellers have skin in the game, 
+                  protecting the platform&apos;s reputation.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-purple-900/20 border border-purple-500/30 rounded-lg p-6">
+              <h3 className="text-lg font-bold mb-3 text-purple-400">💎 Why This Model Works</h3>
+              <ul className="space-y-2 text-gray-400 text-sm">
+                <li className="flex gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span><strong>Quality Control:</strong> Paywalls naturally filter serious users from tire-kickers</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span><strong>Sustainable Demand:</strong> Every user needs to buy and hold tokens to participate</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span><strong>Aligned Incentives:</strong> Token holders become platform stakeholders invested in success</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span><strong>Reduced Spam:</strong> 50k holding requirement eliminates bot accounts and low-quality listings</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="text-green-500">✓</span>
+                  <span><strong>Premium Positioning:</strong> Exclusivity creates perceived value and attracts high-quality software</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-8 text-center">
+              <a 
+                href="https://pump.fun" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 bg-gradient-to-r from-green-500 to-cyan-500 text-black font-bold text-lg rounded hover:from-green-400 hover:to-cyan-400 transition-all"
+              >
+                Buy $SRx402 to Get Access →
+              </a>
+              <p className="text-xs text-gray-600 mt-3">
+                Minimum 50,000 tokens required for marketplace access
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Token Section */}
       <section className="border-t border-gray-800 bg-gray-950/50">
         <div className="max-w-6xl mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold mb-4 text-center">
             <span className="gradient-text">$SRx402</span> Token
           </h2>
-          <p className="text-gray-400 text-center mb-6 max-w-2xl mx-auto">
-            Platform governance token and marketplace access key. 35% fees from high-risk listings are used exclusively for buyback & burn.
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            Platform governance token. 35% fees from high-risk listings are used exclusively for buyback & burn.
           </p>
-          
-          {/* Access Requirement Banner */}
-          <div className="max-w-3xl mx-auto mb-12">
-            <div className="bg-gradient-to-r from-green-900/30 via-cyan-900/30 to-purple-900/30 border-2 border-green-500/50 rounded-lg p-6">
-              <div className="flex items-start gap-4">
-                <div className="text-4xl">🔑</div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2 text-green-400">Marketplace Access Required</h3>
-                  <p className="text-gray-300 mb-3">
-                    To list or purchase software on SilkRoadx402, you must hold a minimum of{' '}
-                    <span className="text-cyan-400 font-bold">50,000 $SRx402</span> tokens in your connected wallet.
-                  </p>
-                  <p className="text-sm text-gray-400">
-                    This requirement ensures platform quality, reduces spam listings, and creates sustainable token demand. 
-                    Buyers and sellers both need the minimum holding to participate.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Chart */}
@@ -479,19 +557,10 @@ export default function Home() {
 
               <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 rounded-lg p-6">
                 <h3 className="text-lg font-bold mb-2 text-purple-400">🔥 Burn Mechanism</h3>
-                <p className="text-sm text-gray-400 mb-3">
+                <p className="text-sm text-gray-400">
                   35% fees from high-risk listings are used to buyback $SRx402 and burn it forever. 
                   This deflationary mechanism protects the platform from profiting off questionable software while 
                   increasing token scarcity over time.
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-900/20 to-cyan-900/20 border border-green-500/30 rounded-lg p-6">
-                <h3 className="text-lg font-bold mb-2 text-green-400">🔐 Access Token</h3>
-                <p className="text-sm text-gray-400">
-                  Hold <span className="text-cyan-400 font-bold">50,000+ $SRx402</span> to access the marketplace. 
-                  This paywall model ensures serious users, quality listings, and sustainable platform economics. 
-                  Token holders become platform stakeholders.
                 </p>
               </div>
 
@@ -515,17 +584,19 @@ export default function Home() {
           <p className="text-xl text-gray-400 mb-4">
             Join the future of anonymous software commerce. Turn your code into cash.
           </p>
+          
           <div className="bg-cyan-900/20 border border-cyan-500/30 rounded-lg p-4 max-w-2xl mx-auto mb-10">
             <p className="text-sm text-gray-300">
-              <strong className="text-cyan-400">Access Requirement:</strong> Hold 50,000+ $SRx402 tokens to use the marketplace
+              <strong className="text-cyan-400">🔑 Access Requirement:</strong> Hold 50,000+ $SRx402 tokens to use the marketplace
             </p>
           </div>
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="https://pump.fun" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-block px-12 py-4 bg-purple-500 text-white font-bold text-lg rounded hover:bg-purple-400 transition-all"
+              className="inline-block px-12 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold text-lg rounded hover:from-purple-600 hover:to-pink-600 transition-all"
             >
               Buy $SRx402 →
             </a>
@@ -538,6 +609,7 @@ export default function Home() {
               Join Community →
           </a>
           </div>
+
           <p className="text-sm text-gray-600 mt-6">
             Platform launching Q4 2025
           </p>
