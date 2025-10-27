@@ -1,16 +1,75 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+
+interface TokenData {
+  priceUsd: string;
+  marketCap: number;
+  volume24h: number;
+  priceChange24h: number;
+  liquidity?: number;
+}
 
 export default function Home() {
   const [copied, setCopied] = useState(false);
+  const [tokenData, setTokenData] = useState<TokenData | null>(null);
+  const [loading, setLoading] = useState(true);
+  
+  const TOKEN_ADDRESS = '49AfJsWb9E7VjBDTdZ2DjnSLFgSEvCoP1wdXuhHbpump';
+  const PAIR_ADDRESS = '4dquGRPzcjskMsHtiFagPuguMfY37ywkNMNBg4F54fNW';
+  
+  useEffect(() => {
+    const fetchTokenData = async () => {
+      try {
+        // Fetch from DexScreener API with cache busting
+        const response = await fetch(
+          `https://api.dexscreener.com/latest/dex/pairs/solana/${PAIR_ADDRESS}?t=${Date.now()}`,
+          { cache: 'no-store' }
+        );
+        const data = await response.json();
+        
+        console.log('DexScreener data:', data);
+        
+        if (data.pair) {
+          setTokenData({
+            priceUsd: data.pair.priceUsd,
+            marketCap: data.pair.fdv || data.pair.marketCap,
+            volume24h: data.pair.volume.h24,
+            priceChange24h: data.pair.priceChange.h24,
+            liquidity: data.pair.liquidity?.usd
+          });
+        }
+      } catch (error) {
+        console.error('Error fetching token data:', error);
+      }
+    };
+
+    // Initial fetch
+    fetchTokenData();
+    setLoading(false);
+
+    // Refresh every 2 seconds for faster updates
+    const interval = setInterval(() => {
+      fetchTokenData();
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [TOKEN_ADDRESS, PAIR_ADDRESS]);
   
   const copyToClipboard = () => {
-    navigator.clipboard.writeText('49AfJsWb9E7VjBDTdZ2DjnSLFgSEvCoP1wdXuhHbpump');
+    navigator.clipboard.writeText(TOKEN_ADDRESS);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
+
+  const formatNumber = (num: number): string => {
+    if (num >= 1000000000) return `$${(num / 1000000000).toFixed(2)}B`;
+    if (num >= 1000000) return `$${(num / 1000000).toFixed(2)}M`;
+    if (num >= 1000) return `$${(num / 1000).toFixed(2)}K`;
+    return `$${num.toFixed(2)}`;
+  };
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -369,12 +428,32 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-500">Market Cap</span>
-                    <span className="text-gray-300">TBA</span>
+                    <span className="text-gray-300">
+                      {loading ? (
+                        <span className="animate-pulse">Loading...</span>
+                      ) : tokenData?.marketCap ? (
+                        formatNumber(tokenData.marketCap)
+                      ) : (
+                        'N/A'
+                      )}
+                    </span>
+                  </div>
+                  {tokenData && (
+                    <>
+                      <div className="flex justify-between items-center">
+                        <span className="text-gray-500">24h Volume</span>
+                        <span className="text-gray-300">
+                          {formatNumber(tokenData.volume24h)}
+                        </span>
                   </div>
                   <div className="flex justify-between items-center">
-                    <span className="text-gray-500">Holders</span>
-                    <span className="text-gray-300">TBA</span>
+                        <span className="text-gray-500">24h Change</span>
+                        <span className={tokenData.priceChange24h >= 0 ? 'text-green-400' : 'text-red-400'}>
+                          {tokenData.priceChange24h >= 0 ? '+' : ''}{tokenData.priceChange24h.toFixed(2)}%
+                        </span>
                   </div>
+                    </>
+                  )}
                 </div>
               </div>
 
