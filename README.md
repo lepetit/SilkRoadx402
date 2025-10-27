@@ -50,7 +50,7 @@ SilkRoadx402 prohibits the sale of illegal software, malware, or tools that viol
 
 **Platform Fees:**
 - 0.5% on standard software transactions
-- 35% on high-risk listings (at platform discretion, used exclusively for SRx420 token buyback/burn, not profit)
+- 35% on high-risk listings (at platform discretion, used exclusively for SRx402 token buyback/burn, not profit)
 
 This dual-fee structure protects the platform from profiting off potentially problematic software. Non-compliant or illegal software will not be listed.
 

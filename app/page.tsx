@@ -310,7 +310,7 @@ export default function Home() {
             </p>
             <p className="text-gray-400 text-sm">
               <strong className="text-red-300">Fee Structure:</strong> Standard software pays 0.5% fees. High-risk listings 
-              (at platform discretion) incur a 35% fee, used exclusively for SRx420 token buyback/burn—not as platform profit. 
+              (at platform discretion) incur a 35% fee, used exclusively for SRx402 token buyback/burn—not as platform profit. 
               We do not profit from any questionable software.
             </p>
           </div>
@@ -321,7 +321,7 @@ export default function Home() {
       <section className="border-t border-gray-800 bg-gray-950/50">
         <div className="max-w-6xl mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold mb-4 text-center">
-            <span className="gradient-text">$SRx420</span> Token
+            <span className="gradient-text">$SRx402</span> Token
           </h2>
           <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
             Platform governance token. 35% fees from high-risk listings are used exclusively for buyback & burn.
@@ -365,7 +365,7 @@ export default function Home() {
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <span className="text-gray-500">Symbol</span>
-                    <span className="text-gray-300 font-bold">$SRx420</span>
+                    <span className="text-gray-300 font-bold">$SRx402</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-500">Network</span>
@@ -385,7 +385,7 @@ export default function Home() {
               <div className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 rounded-lg p-6">
                 <h3 className="text-lg font-bold mb-2 text-purple-400">🔥 Burn Mechanism</h3>
                 <p className="text-sm text-gray-400">
-                  35% fees from high-risk listings are used to buyback $SRx420 and burn it forever. 
+                  35% fees from high-risk listings are used to buyback $SRx402 and burn it forever. 
                   This deflationary mechanism protects the platform from profiting off questionable software while 
                   increasing token scarcity over time.
                 </p>
@@ -472,7 +472,7 @@ export default function Home() {
             </p>
             <p className="text-xs text-gray-600 text-center mt-4">
               <strong>Platform Fees:</strong> 0.5% on standard software transactions. High-risk listings (determined at platform discretion) are subject to a 35% fee, 
-              which is used exclusively for SRx420 token buyback and burn—not as platform profit. This protects the platform from liability associated with 
+              which is used exclusively for SRx402 token buyback and burn—not as platform profit. This protects the platform from liability associated with 
               potentially problematic software. Non-compliant or illegal software is strictly prohibited and will not be listed.
             </p>
             <div className="flex flex-col items-center gap-3 mt-6">
