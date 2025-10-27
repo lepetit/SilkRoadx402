@@ -7,7 +7,7 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   
   const copyToClipboard = () => {
-    navigator.clipboard.writeText('6rA1Qr3a16LtSHcoqwPRx76raKfRJiwMKUF8Vgfppump');
+    navigator.clipboard.writeText('49AfJsWb9E7VjBDTdZ2DjnSLFgSEvCoP1wdXuhHbpump');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -348,7 +348,7 @@ export default function Home() {
                   <input 
                     type="text" 
                     readOnly 
-                    value="6rA1Qr3a16LtSHcoqwPRx76raKfRJiwMKUF8Vgfppump"
+                    value="49AfJsWb9E7VjBDTdZ2DjnSLFgSEvCoP1wdXuhHbpump"
                     className="flex-1 bg-gray-900 border border-gray-700 rounded px-4 py-2 text-gray-300 text-sm font-mono"
                   />
                   <button 
