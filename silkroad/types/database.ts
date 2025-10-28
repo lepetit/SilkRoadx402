@@ -1,16 +1,17 @@
 /**
- * Database Model Types
+ * Database Model Types (Simplified for Mock Mode)
  * 
- * TypeScript interfaces matching Mongoose schemas
+ * NOTE: For demo deployment, these are plain interfaces without Mongoose.
+ * For production, extend from Mongoose Document types.
  */
 
-import { Document } from 'mongoose';
 import type { ListingCategory, RiskLevel, ListingState, TransactionStatus, LogType } from '@/config/constants';
 
 // ============================================
 // Listing
 // ============================================
-export interface IListing extends Document {
+export interface IListing {
+  _id?: string;
   wallet: string;
   title: string;
   description: string;
@@ -34,7 +35,8 @@ export interface IListing extends Document {
 // ============================================
 // Transaction
 // ============================================
-export interface ITransaction extends Document {
+export interface ITransaction {
+  _id?: string;
   listingId: string;
   buyerWallet: string;
   sellerWallet: string;
@@ -48,7 +50,8 @@ export interface ITransaction extends Document {
 // ============================================
 // Log
 // ============================================
-export interface ILog extends Document {
+export interface ILog {
+  _id?: string;
   type: LogType;
   message: string;
   wallet?: string;
@@ -59,7 +62,8 @@ export interface ILog extends Document {
 // ============================================
 // Report
 // ============================================
-export interface IReport extends Document {
+export interface IReport {
+  _id?: string;
   listingId: string;
   reporterWallet: string;
   reason?: string;
