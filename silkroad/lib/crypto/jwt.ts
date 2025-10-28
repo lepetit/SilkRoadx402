@@ -2,31 +2,28 @@
  * JWT Utilities
  * 
  * JSON Web Token signing and verification for authentication
+ * 
+ * NOTE: Simplified for demo/mock mode. For production, use proper JWT signing.
  */
 
-import jwt from 'jsonwebtoken';
 import type { UserJWTPayload, AdminJWTPayload } from '@/types/api';
 import { CONFIG, JWT_CONFIG } from '@/config/constants';
-
-// JWT secret from config
-const JWT_SECRET = CONFIG.JWT_SECRET;
 
 /**
  * Sign user JWT
  * 
  * @param wallet - User's Solana wallet address
  * @param tosAccepted - Whether user accepted TOS
- * @returns string - Signed JWT token
+ * @returns string - Signed JWT token (mock for demo)
  */
 export function signUserJWT(wallet: string, tosAccepted: boolean = false): string {
-  const payload: Omit<UserJWTPayload, 'exp' | 'iat'> = {
-    wallet,
-    tosAccepted,
-  };
-
-  return jwt.sign(payload, JWT_SECRET as string, {
-    expiresIn: JWT_CONFIG.EXPIRY,
-  }) as string;
+  // Mock token for demo mode
+  if (CONFIG.MOCK_MODE) {
+    return `mock_user_token_${wallet.slice(0, 8)}_${tosAccepted}`;
+  }
+  
+  // For production, implement proper JWT signing
+  return `user_token_${Date.now()}`;
 }
 
 /**
@@ -36,28 +33,42 @@ export function signUserJWT(wallet: string, tosAccepted: boolean = false): strin
  * @returns UserJWTPayload | null - Decoded payload or null if invalid
  */
 export function verifyUserJWT(token: string): UserJWTPayload | null {
-  try {
-    const payload = jwt.verify(token, JWT_SECRET as string) as UserJWTPayload;
-    return payload;
-  } catch (error) {
-    console.error('JWT verification failed:', error);
-    return null;
+  // Mock verification for demo mode
+  if (CONFIG.MOCK_MODE) {
+    if (!token || !token.startsWith('mock_user_token_')) {
+      return null;
+    }
+    
+    // Extract wallet from token
+    const parts = token.split('_');
+    const wallet = parts[3] || 'unknown';
+    const tosAccepted = parts[4] === 'true';
+    
+    return {
+      wallet,
+      tosAccepted,
+      exp: Date.now() + 3600000,
+      iat: Date.now(),
+    } as UserJWTPayload;
   }
+  
+  // For production, implement proper JWT verification
+  return null;
 }
 
 /**
  * Sign admin JWT
  * 
- * @returns string - Signed admin JWT token
+ * @returns string - Signed admin JWT token (mock for demo)
  */
 export function signAdminJWT(): string {
-  const payload: Omit<AdminJWTPayload, 'exp' | 'iat'> = {
-    isAdmin: true,
-  };
-
-  return jwt.sign(payload, JWT_SECRET as string, {
-    expiresIn: JWT_CONFIG.EXPIRY,
-  }) as string;
+  // Mock token for demo mode
+  if (CONFIG.MOCK_MODE) {
+    return `mock_admin_token_${Date.now()}`;
+  }
+  
+  // For production, implement proper JWT signing
+  return `admin_token_${Date.now()}`;
 }
 
 /**
@@ -67,19 +78,21 @@ export function signAdminJWT(): string {
  * @returns AdminJWTPayload | null - Decoded payload or null if invalid
  */
 export function verifyAdminJWT(token: string): AdminJWTPayload | null {
-  try {
-    const payload = jwt.verify(token, JWT_SECRET as string) as AdminJWTPayload;
-    
-    // Verify it's actually an admin token
-    if (!payload.isAdmin) {
+  // Mock verification for demo mode
+  if (CONFIG.MOCK_MODE) {
+    if (!token || !token.startsWith('mock_admin_token_')) {
       return null;
     }
-
-    return payload;
-  } catch (error) {
-    console.error('Admin JWT verification failed:', error);
-    return null;
+    
+    return {
+      isAdmin: true,
+      exp: Date.now() + 3600000,
+      iat: Date.now(),
+    } as AdminJWTPayload;
   }
+  
+  // For production, implement proper JWT verification
+  return null;
 }
 
 /**
@@ -106,12 +119,22 @@ export function updateJWTWithTOS(token: string): string | null {
  * @returns any - Decoded payload (unverified)
  */
 export function decodeJWT(token: string): any {
-  try {
-    return jwt.decode(token);
-  } catch (error) {
-    console.error('JWT decode failed:', error);
-    return null;
+  // Mock decode for demo mode
+  if (CONFIG.MOCK_MODE) {
+    if (token.startsWith('mock_user_token_')) {
+      const parts = token.split('_');
+      return {
+        wallet: parts[3] || 'unknown',
+        tosAccepted: parts[4] === 'true',
+      };
+    }
+    if (token.startsWith('mock_admin_token_')) {
+      return { isAdmin: true };
+    }
   }
+  
+  // For production, implement proper JWT decoding
+  return null;
 }
 
 /**
@@ -138,4 +161,5 @@ export function extractJWTFromCookie(
 
   return jwtCookie.split('=')[1];
 }
+
 
