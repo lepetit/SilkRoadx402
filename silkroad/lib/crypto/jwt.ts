@@ -4,12 +4,12 @@
  * JSON Web Token signing and verification for authentication
  */
 
-import jwt from 'jsonwebtoken';
+import jwt, { Secret, SignOptions } from 'jsonwebtoken';
 import type { UserJWTPayload, AdminJWTPayload } from '@/types/api';
 import { CONFIG, JWT_CONFIG } from '@/config/constants';
 
 // JWT secret from config
-const JWT_SECRET = CONFIG.JWT_SECRET;
+const JWT_SECRET: Secret = CONFIG.JWT_SECRET;
 
 /**
  * Sign user JWT
@@ -24,9 +24,11 @@ export function signUserJWT(wallet: string, tosAccepted: boolean = false): strin
     tosAccepted,
   };
 
-  return jwt.sign(payload, JWT_SECRET, {
+  const options: SignOptions = {
     expiresIn: JWT_CONFIG.EXPIRY,
-  });
+  };
+
+  return jwt.sign(payload, JWT_SECRET, options);
 }
 
 /**
@@ -55,9 +57,11 @@ export function signAdminJWT(): string {
     isAdmin: true,
   };
 
-  return jwt.sign(payload, JWT_SECRET, {
+  const options: SignOptions = {
     expiresIn: JWT_CONFIG.EXPIRY,
-  });
+  };
+
+  return jwt.sign(payload, JWT_SECRET, options);
 }
 
 /**
