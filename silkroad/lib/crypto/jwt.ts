@@ -4,12 +4,12 @@
  * JSON Web Token signing and verification for authentication
  */
 
-import jwt, { Secret } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import type { UserJWTPayload, AdminJWTPayload } from '@/types/api';
 import { CONFIG, JWT_CONFIG } from '@/config/constants';
 
 // JWT secret from config
-const JWT_SECRET: Secret = CONFIG.JWT_SECRET;
+const JWT_SECRET = CONFIG.JWT_SECRET;
 
 /**
  * Sign user JWT
@@ -24,9 +24,9 @@ export function signUserJWT(wallet: string, tosAccepted: boolean = false): strin
     tosAccepted,
   };
 
-  return jwt.sign(payload, JWT_SECRET, {
-    expiresIn: JWT_CONFIG.EXPIRY as string,
-  });
+  return jwt.sign(payload, JWT_SECRET as string, {
+    expiresIn: JWT_CONFIG.EXPIRY,
+  }) as string;
 }
 
 /**
@@ -37,7 +37,7 @@ export function signUserJWT(wallet: string, tosAccepted: boolean = false): strin
  */
 export function verifyUserJWT(token: string): UserJWTPayload | null {
   try {
-    const payload = jwt.verify(token, JWT_SECRET) as UserJWTPayload;
+    const payload = jwt.verify(token, JWT_SECRET as string) as UserJWTPayload;
     return payload;
   } catch (error) {
     console.error('JWT verification failed:', error);
@@ -55,9 +55,9 @@ export function signAdminJWT(): string {
     isAdmin: true,
   };
 
-  return jwt.sign(payload, JWT_SECRET, {
-    expiresIn: JWT_CONFIG.EXPIRY as string,
-  });
+  return jwt.sign(payload, JWT_SECRET as string, {
+    expiresIn: JWT_CONFIG.EXPIRY,
+  }) as string;
 }
 
 /**
@@ -68,7 +68,7 @@ export function signAdminJWT(): string {
  */
 export function verifyAdminJWT(token: string): AdminJWTPayload | null {
   try {
-    const payload = jwt.verify(token, JWT_SECRET) as AdminJWTPayload;
+    const payload = jwt.verify(token, JWT_SECRET as string) as AdminJWTPayload;
     
     // Verify it's actually an admin token
     if (!payload.isAdmin) {
