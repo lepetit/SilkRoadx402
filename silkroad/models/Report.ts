@@ -1,38 +1,10 @@
 /**
- * Report Model
+ * Report Model (Stub for Mock Mode)
  * 
- * Mongoose schema for user reports
+ * NOTE: For demo deployment, models are not needed (uses mockStore).
+ * For production, implement proper Mongoose models.
  */
 
-import mongoose, { Schema } from 'mongoose';
-import type { IReport } from '@/types/database';
-
-const ReportSchema = new Schema<IReport>(
-  {
-    listingId: {
-      type: String,
-      required: true,
-      index: true,
-    },
-    reporterWallet: {
-      type: String,
-      required: true,
-    },
-    reason: {
-      type: String,
-      maxlength: 100,
-    },
-  },
-  {
-    timestamps: { createdAt: true, updatedAt: false },
-  }
-);
-
-// Unique compound index: Prevents duplicate reports from same wallet
-ReportSchema.index(
-  { listingId: 1, reporterWallet: 1 },
-  { unique: true }
-);
-
-export const Report = mongoose.models.Report || mongoose.model<IReport>('Report', ReportSchema);
-
+// Stub export for mock mode compatibility
+export const Report = null as any;
+export default Report;

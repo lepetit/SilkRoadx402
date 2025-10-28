@@ -1,36 +1,10 @@
-import mongoose from 'mongoose';
+/**
+ * User Model (Stub for Mock Mode)
+ * 
+ * NOTE: For demo deployment, models are not needed (uses mockStore).
+ * For production, implement proper Mongoose models.
+ */
 
-const UserSchema = new mongoose.Schema({
-  wallet: {
-    type: String,
-    required: true,
-    unique: true,
-    index: true,
-  },
-  hasAcceptedTOS: {
-    type: Boolean,
-    default: false,
-  },
-  tosAcceptedAt: {
-    type: Date,
-  },
-  isTokenGated: {
-    type: Boolean,
-    default: false,
-  },
-  tokenBalance: {
-    type: Number,
-    default: 0,
-  },
-  lastSeen: {
-    type: Date,
-    default: Date.now,
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-export const User = mongoose.models.User || mongoose.model('User', UserSchema);
-
+// Stub export for mock mode compatibility
+export const User = null as any;
+export default User;
