@@ -1,7 +1,6 @@
 'use client';
 
 import { useAuth } from '@/hooks/useAuth';
-import { TOSModal } from '@/components/modals/TOSModal';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 import Link from 'next/link';
 
@@ -12,9 +11,6 @@ export default function Home() {
     isTokenGated, 
     isLoading, 
     error,
-    showTOSModal,
-    acceptTOS,
-    declineTOS,
     mounted,
   } = useAuth();
 
@@ -25,13 +21,6 @@ export default function Home() {
 
   return (
     <>
-      {/* TOS Modal */}
-      <TOSModal
-        isOpen={showTOSModal}
-        onAccept={acceptTOS}
-        onDecline={declineTOS}
-      />
-
       {/* Homepage */}
       <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-zinc-50 to-zinc-100 dark:from-zinc-950 dark:to-black px-4">
         <div className="w-full max-w-4xl text-center">
