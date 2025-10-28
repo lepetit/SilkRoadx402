@@ -12,6 +12,9 @@ interface AuthState {
   error: string | null;
 }
 
+const DEMO_TOS_KEY = 'demo_tos_accepted';
+const DEMO_TOS_WALLET_KEY = 'demo_tos_wallet';
+
 export function useAuth() {
   const { publicKey, connected, disconnect } = useWallet();
   const [authState, setAuthState] = useState<AuthState>({
@@ -24,17 +27,36 @@ export function useAuth() {
   const [showTOSModal, setShowTOSModal] = useState(false);
   const [mounted, setMounted] = useState(false);
 
-  // Prevent hydration issues
+  // Prevent hydration issues & load from localStorage
   useEffect(() => {
     setMounted(true);
-  }, []);
+    
+    // DEMO MODE: Check localStorage for TOS acceptance
+    if (typeof window !== 'undefined') {
+      const savedTOS = localStorage.getItem(DEMO_TOS_KEY);
+      const savedWallet = localStorage.getItem(DEMO_TOS_WALLET_KEY);
+      
+      if (savedTOS === 'true' && savedWallet && publicKey?.toBase58() === savedWallet) {
+        console.log('🧪 DEMO: Restored TOS acceptance from localStorage');
+        setAuthState(prev => ({
+          ...prev,
+          hasAcceptedTOS: true,
+          isTokenGated: true,
+        }));
+      }
+    }
+  }, [publicKey]);
 
   // Check auth status when wallet connects
   useEffect(() => {
     if (connected && publicKey) {
       checkAuthStatus();
     } else {
-      // Reset state on disconnect
+      // Reset state on disconnect & clear localStorage
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem(DEMO_TOS_KEY);
+        localStorage.removeItem(DEMO_TOS_WALLET_KEY);
+      }
       setAuthState({
         isConnected: false,
         hasAcceptedTOS: false,
@@ -48,6 +70,24 @@ export function useAuth() {
 
   const checkAuthStatus = async () => {
     if (!publicKey) return;
+
+    // DEMO MODE: Check localStorage first
+    if (typeof window !== 'undefined') {
+      const savedTOS = localStorage.getItem(DEMO_TOS_KEY);
+      const savedWallet = localStorage.getItem(DEMO_TOS_WALLET_KEY);
+      
+      if (savedTOS === 'true' && savedWallet === publicKey.toBase58()) {
+        console.log('🧪 DEMO: Using cached TOS acceptance');
+        setAuthState({
+          isConnected: true,
+          hasAcceptedTOS: true,
+          isTokenGated: true,
+          isLoading: false,
+          error: null,
+        });
+        return; // Skip API call if already accepted in localStorage
+      }
+    }
 
     setAuthState(prev => ({ ...prev, isLoading: true, error: null }));
 
@@ -67,7 +107,7 @@ export function useAuth() {
         error: null,
       });
 
-      // Show TOS modal if not accepted yet (only show once in demo)
+      // Show TOS modal if not accepted yet
       if (!hasAcceptedTOS) {
         setShowTOSModal(true);
       }
@@ -92,13 +132,21 @@ export function useAuth() {
   const acceptTOS = async () => {
     if (!publicKey) return;
 
-    // DEMO MODE: Bypass TOS acceptance API call
+    // DEMO MODE: Bypass TOS acceptance API call & save to localStorage
     console.log('🧪 DEMO MODE: Bypassing TOS acceptance');
+    
+    // Save to localStorage for persistence
+    if (typeof window !== 'undefined') {
+      localStorage.setItem(DEMO_TOS_KEY, 'true');
+      localStorage.setItem(DEMO_TOS_WALLET_KEY, publicKey.toBase58());
+      console.log('🧪 DEMO: Saved TOS acceptance to localStorage');
+    }
     
     // Update state immediately
     setAuthState(prev => ({
       ...prev,
       hasAcceptedTOS: true,
+      isTokenGated: true,
       isLoading: false,
       error: null,
     }));
@@ -109,6 +157,11 @@ export function useAuth() {
   };
 
   const declineTOS = () => {
+    // Clear localStorage on decline
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem(DEMO_TOS_KEY);
+      localStorage.removeItem(DEMO_TOS_WALLET_KEY);
+    }
     disconnect();
     setShowTOSModal(false);
   };
