@@ -46,11 +46,13 @@ export const CONFIG = {
   NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
   
   // Development Mock Mode (bypasses database for testing)
-  MOCK_MODE: process.env.NEXT_PUBLIC_MOCK_MODE === 'true',
-  MOCK_TOKEN_GATING_PASSED: process.env.NEXT_PUBLIC_MOCK_TOKEN_GATING === 'true',
+  // Default to TRUE for demo deployment (only disable if explicitly set to 'false')
+  MOCK_MODE: process.env.NEXT_PUBLIC_MOCK_MODE !== 'false',
+  MOCK_TOKEN_GATING_PASSED: process.env.NEXT_PUBLIC_MOCK_TOKEN_GATING !== 'false',
   
   // Admin Panel (disable for public demos)
-  DISABLE_ADMIN: process.env.NEXT_PUBLIC_DISABLE_ADMIN === 'true',
+  // Default to TRUE for demo deployment (only enable if explicitly set to 'false')
+  DISABLE_ADMIN: process.env.NEXT_PUBLIC_DISABLE_ADMIN !== 'false',
 };
 
 // Token Addresses (for backward compatibility)
